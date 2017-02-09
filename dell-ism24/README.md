@@ -5,21 +5,22 @@ Dockerized [iSM](http://en.community.dell.com/techcenter/systems-management/w/wi
 ## Configuration
 
   - container has to run in privilged mode.
-  - container has to run with --net=host so it can access 'idrac' USB interface.
+  - container has to run with `--net=host` so it can access `idrac` USB interface.
   - volume mount `/var/log/` so that iSM has access to host OS logs
   - default command: `/opt/dell/srvadmin/iSM/sbin/dsm_ism_srvmgrd`.
 
 ## Where this image has been tested
 
   - RHEL 7
-  - CentOS 7 (future)
+  - CentOS 7
   - Ubuntu Server 14.04 & 16.04 (future)
+  - Debian 8 (future)
 
 ## Run example
 
 ```bash
-$ docker run --privileged --net=host -d -P --restart=always \
-   --name=ism21 jdelaros1/ism21:latest
+$ docker run --privileged -d -P -v /var/log:/var/log --restart=always \
+     --net=host --name=ism23 spkane/dell-ism24:latest
 ```
 
 ## Known Issues

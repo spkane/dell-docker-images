@@ -6,7 +6,7 @@ Please note that this container image is for debugging purposes ONLY.
 
 ## Image tags
 
-- jdelaros1/dsu:15.05.00
+- spkane/dell-dsu:latest
 
 ## Configuration
 
@@ -16,14 +16,14 @@ Please note that this container image is for debugging purposes ONLY.
 ## Run example
 
 ```bash
-$ docker run --privileged -d -P --name=dsu jdelaros1/dsu:15.05.00
+$ sudo modprobe usb_storage && docker run --rm -ti --privileged -P --name=dsu spkane/dell-dsu:latest:latest /bin/bash
 ```
 
 Get IP address of container and login with credentials above. Once inside the container, run "dsu --inventory". See [here](http://linux.dell.com/repo/hardware/DSU_15.05.00/) for details.
 
 ## Known Issues
 
-  - Hardware inventory does not work. This image is for debugging only.
+  - Hardware inventory may not work perfectly, but it seems to work in general.
 
 ## Support
 

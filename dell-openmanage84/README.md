@@ -12,7 +12,7 @@ Dockerized OpenManage Server Administrator (OMSA), built on top of [official Cen
 ```bash
 $ docker run --privileged -d -p 161:161/udp -p 1311:1311 --restart=always \
     --net=host -v /lib/modules/`uname -r`:/lib/modules/`uname -r` \
-    --name=omsa82-snmp jdelaros1/openmanage-snmp
+    --name=omsa spkane/dell-openmanage84:latest
 ```
 
 ## Report problems or provide feedback
